@@ -1,0 +1,154 @@
+/* Presentación visual de la interfaz del Publicador de mensajes */
+
+:root {
+  --color-fondo: #f4f6fb;
+  --color-tarjeta: #ffffff;
+  --color-texto: #1f2937;
+  --color-primario: #2563eb;
+  --color-primario-oscuro: #1d4ed8;
+  --color-exito: #15803d;
+  --color-error: #b91c1c;
+  --color-carga: #92400e;
+  --color-borde: #d1d5db;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.5;
+}
+
+.contenedor {
+  max-width: 640px;
+  margin: 40px auto;
+  padding: 24px;
+  background: var(--color-tarjeta);
+  border: 1px solid var(--color-borde);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.encabezado h1 {
+  margin: 0 0 4px;
+  font-size: 1.6rem;
+}
+
+.encabezado p {
+  margin: 0 0 20px;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.campo label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.campo input,
+.campo textarea {
+  padding: 10px 12px;
+  font: inherit;
+  color: inherit;
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  background: #fff;
+  resize: vertical;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  outline: 2px solid var(--color-primario);
+  outline-offset: 1px;
+  border-color: var(--color-primario);
+}
+
+.boton {
+  padding: 12px 16px;
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: var(--color-primario);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.boton:hover:not(:disabled) {
+  background: var(--color-primario-oscuro);
+}
+
+.boton:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.salida {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mensaje {
+  min-height: 24px;
+  font-size: 0.95rem;
+  white-space: pre-wrap;
+}
+
+.mensaje.cargando {
+  color: var(--color-carga);
+  font-weight: 600;
+}
+
+.mensaje.exito {
+  color: var(--color-exito);
+  font-weight: 600;
+}
+
+.mensaje.error {
+  color: var(--color-error);
+  font-weight: 600;
+}
+
+.resultado {
+  padding: 16px;
+  background: #f9fafb;
+  border: 1px solid var(--color-borde);
+  border-left: 4px solid var(--color-exito);
+  border-radius: 8px;
+}
+
+.resultado h2 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+}
+
+.resultado p {
+  margin: 4px 0;
+  font-size: 0.95rem;
+  white-space: pre-wrap;
+}
+
+.resultado .id {
+  color: #6b7280;
+  font-size: 0.85rem;
+}

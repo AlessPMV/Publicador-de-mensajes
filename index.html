@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publicador de mensajes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="contenedor">
+    <header class="encabezado">
+      <h1>Publicador de mensajes</h1>
+      <p>Envía una publicación a la API de prueba JSONPlaceholder mediante una petición HTTP POST.</p>
+    </header>
+
+    <!-- Formulario: maneja el envío con addEventListener('submit') + preventDefault() -->
+    <form id="formulario" class="formulario" novalidate>
+      <div class="campo">
+        <label for="titulo">Título</label>
+        <input
+          type="text"
+          id="titulo"
+          name="titulo"
+          placeholder="Escribe el título de la publicación"
+          autocomplete="off"
+          aria-describedby="mensaje"
+        >
+      </div>
+
+      <div class="campo">
+        <label for="contenido">Contenido</label>
+        <textarea
+          id="contenido"
+          name="contenido"
+          rows="5"
+          placeholder="Escribe el contenido de la publicación"
+          aria-describedby="mensaje"
+        ></textarea>
+      </div>
+
+      <button type="submit" id="publicar" class="boton">Publicar</button>
+    </form>
+
+    <!-- Áreas de mensajes y resultados (se actualizan con textContent) -->
+    <section class="salida">
+      <div id="mensaje" class="mensaje" role="status" aria-live="polite"></div>
+      <article id="resultado" class="resultado" hidden></article>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
